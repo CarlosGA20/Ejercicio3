@@ -24,12 +24,12 @@ START              ;inicio global del programa
     BCF STATUS, RP0    ;Regresar al banco 0 apagando el RP0
 
 INICIO
-    
-    
     BCF PORTB,0
     call tiempo
     BTFSC PORTB,1
     call tiempo
+    nop
+    nop
     BSF PORTB,0
     call tiempo
     BTFSC PORTB,1
@@ -40,7 +40,6 @@ INICIO
 tiempo:
 	MOVLW d'60'
 	MOVWF i
-	nop
 	nop
 	nop
 	nop
@@ -77,6 +76,3 @@ LOOPK	MOVLW d'50'
 return 
 	   
 END
-
-    
-    
